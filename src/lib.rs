@@ -67,6 +67,7 @@ pub fn cosmwasm_serde(
     let input_struct = parse_macro_input!(input as syn::DeriveInput);
     proc_macro::TokenStream::from(quote! {
         #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
+        #[serde(rename_all = "snake_case")]
         #input_struct
     })
 }
