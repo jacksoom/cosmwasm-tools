@@ -66,7 +66,7 @@ pub fn cosmwasm_serde(
 ) -> proc_macro::TokenStream {
     let input_struct = parse_macro_input!(input as syn::DeriveInput);
     proc_macro::TokenStream::from(quote! {
-        #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq, JsonSchema)]
+        #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
         #input_struct
     })
 }
