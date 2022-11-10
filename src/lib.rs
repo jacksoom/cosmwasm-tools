@@ -54,6 +54,7 @@ pub fn config_item(
         pub const CONFIG: Item<#config_name> = Item::new("CONFIG");
 
         #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq, JsonSchema)]
+        #[serde(rename_all = "snake_case")]
         #input_struct
     })
 }
